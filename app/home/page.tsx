@@ -4,19 +4,18 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="flex h-screen flex-col items-center justify-center space-y-10 bg-black">
-      <Image
-        width={512}
-        height={512}
-        src="/logo.png"
-        alt="Platforms on Vercel"
-        className="w-48"
-      />
-      <h1 className="text-white">
-        Edit this page on{" "}
-        <InlineSnippet className="ml-2 bg-blue-900 text-blue-100">
-          app/home/page.tsx
-        </InlineSnippet>
-      </h1>
+      <form className="flex flex-col items-center justify-center space-y-10">
+        <div className="flex flex-col items-center justify-center space-y-10">
+          <Image
+            src="/images/logo.png"
+            alt="Picture of the author"
+            width={200}
+            height={200}
+          />
+          <h1 className="text-4xl text-white">Welcome to the</h1>
+          <h1 className="text-4xl text-white">Domain Configuration</h1>
+        </div>
+      </form>
     </div>
   );
 }

@@ -12,7 +12,7 @@
   <a href="#introduction"><strong>Introduction</strong></a> ·
   <a href="https://app.vercel.pub/"><strong>Demo</strong></a> ·
   <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="https://vercel.com/guides/nextjs-multi-tenant-application"><strong>Guide</strong></a> ·
+  <a href="https://vercel.comvc env pull/guides/nextjs-multi-tenant-application"><strong>Guide</strong></a> ·
   <a href="https://steven.vercel.pub/kitchen-sink"><strong>Kitchen Sink</strong></a> ·
   <a href="#contributing"><strong>Contributing</strong></a>
 </p>
