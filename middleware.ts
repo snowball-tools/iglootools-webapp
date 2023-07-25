@@ -45,14 +45,7 @@ export default async function middleware(req: NextRequest) {
   ) {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   }
-
-  // special case for `vercel.pub` domain
-  if (hostname === "vercel.pub") {
-    return NextResponse.redirect(
-      "https://vercel.com/blog/platforms-starter-kit",
-    );
-  }
-
+  
   // rewrite everything else to `/[domain]/[path] dynamic route
   return NextResponse.rewrite(new URL(`/${hostname}${path}`, req.url));
 }

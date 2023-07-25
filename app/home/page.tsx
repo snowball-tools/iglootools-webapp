@@ -1,22 +1,24 @@
-import { InlineSnippet } from "@/components/form/domain-configuration";
-import Image from "next/image";
+"use client";
+
+import { useEffect, useState } from "react";
+import { browserSupportsWebAuthn } from "@simplewebauthn/browser";
+import Home from "@/components/Home";
+import Login from "@/components/Login";
 
 export default function HomePage() {
+  // hardcoded for now
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isWebAuthnSupported, setIsWebAuthnSupported] = useState(true);
+  useEffect(() => {
+    const supported =
+      browserSupportsWebAuthn() && !navigator.userAgent.includes("Firefox");
+    setIsWebAuthnSupported(supported);
+  }, []);
+
   return (
     <div className="flex h-screen flex-col items-center justify-center space-y-10 bg-black">
-      <Image
-        width={512}
-        height={512}
-        src="/logo.png"
-        alt="Platforms on Vercel"
-        className="w-48"
-      />
-      <h1 className="text-white">
-        Edit this page on{" "}
-        <InlineSnippet className="ml-2 bg-blue-900 text-blue-100">
-          app/home/page.tsx
-        </InlineSnippet>
-      </h1>
+      <h1 className="text-4xl font-bold text-white">Igloo Tools</h1>
+      {isAuthenticated ? <Home /> : <Login />}
     </div>
   );
 }
