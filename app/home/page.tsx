@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { browserSupportsWebAuthn } from "@simplewebauthn/browser";
-import Home from "@/components/Home";
-import Login from "@/components/Login";
+import Home from "@/app/home/Home";
+import Login from "@/app/home/Login";
+import { AppProvider } from "./appContext";
 
 export default function HomePage() {
   // hardcoded for now
@@ -15,10 +16,5 @@ export default function HomePage() {
     setIsWebAuthnSupported(supported);
   }, []);
 
-  return (
-    <div className="flex h-screen flex-col items-center justify-center space-y-10 bg-black">
-      <h1 className="text-4xl font-bold text-white">Igloo Tools</h1>
-      {isAuthenticated ? <Home /> : <Login />}
-    </div>
-  );
+  return <AppProvider>{isAuthenticated ? <Home /> : <Login />}</AppProvider>;
 }
