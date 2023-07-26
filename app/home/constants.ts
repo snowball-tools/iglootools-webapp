@@ -1,3 +1,5 @@
+import { SessionSigsMap } from "@lit-protocol/types";
+
 export const STATE_KEY = "igloo-state";
 
 export const DEFAULT_CHAIN_ID = 5001;
@@ -138,7 +140,7 @@ export interface CredentialState {
   isAuthenticated: boolean;
   currentUsername: string | null;
   currentPKP: string | null;
-  sessionSigs: {};
+  sessionSigs: SessionSigsMap;
   sessionExpiration: string | null;
   appChainId: number;
   appChains: Chain[];
