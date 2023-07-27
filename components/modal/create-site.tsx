@@ -49,19 +49,19 @@ export default function CreateSiteModal() {
       className="w-full rounded-md bg-white dark:bg-black md:max-w-md md:border md:border-stone-200 md:shadow dark:md:border-stone-700"
     >
       <div className="relative flex flex-col space-y-4 p-5 md:p-10">
-        <h2 className="font-cal text-2xl dark:text-white">Create a new site</h2>
+        <h2 className="font-cal text-2xl dark:text-white">New app</h2>
 
         <div className="flex flex-col space-y-2">
           <label
             htmlFor="name"
             className="text-sm font-medium text-stone-500 dark:text-stone-400"
           >
-            Site Name
+            App Name
           </label>
           <input
             name="name"
             type="text"
-            placeholder="My Awesome Site"
+            placeholder="My Awesome App"
             autoFocus
             value={data.name}
             onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -116,12 +116,12 @@ export default function CreateSiteModal() {
         </div>
       </div>
       <div className="flex items-center justify-end rounded-b-lg border-t border-stone-200 bg-stone-50 p-3 dark:border-stone-700 dark:bg-stone-800 md:px-10">
-        <CreateSiteFormButton />
+        <CreateAppFormButton />
       </div>
     </form>
   );
 }
-function CreateSiteFormButton() {
+function CreateAppFormButton() {
   const { pending } = useFormStatus();
   return (
     <button
@@ -133,7 +133,7 @@ function CreateSiteFormButton() {
       )}
       disabled={pending}
     >
-      {pending ? <LoadingDots color="#808080" /> : <p>Create Site</p>}
+      {pending ? <LoadingDots color="#808080" /> : <p>Create App</p>}
     </button>
   );
 }

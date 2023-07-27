@@ -7,9 +7,9 @@ import { withPostAuth, withSiteAuth } from "./auth";
 import { getSession } from "@/lib/auth";
 import {
   addDomainToVercel,
-  // getApexDomain,
+  getApexDomain,
   removeDomainFromVercelProject,
-  // removeDomainFromVercelTeam,
+  removeDomainFromVercelTeam,
   validDomainRegex,
 } from "@/lib/domains";
 import { put } from "@vercel/blob";
@@ -103,8 +103,6 @@ export const updateSite = withSiteAuth(
         if (site.customDomain && site.customDomain !== value) {
           response = await removeDomainFromVercelProject(site.customDomain);
 
-          /* Optional: remove domain from Vercel team 
-
           // first, we need to check if the apex domain is being used by other sites
           const apexDomain = getApexDomain(`https://${site.customDomain}`);
           const domainCount = await prisma.site.count({
@@ -129,12 +127,8 @@ export const updateSite = withSiteAuth(
           } else {
             // this is the only site using this apex domain
             // so we can remove it entirely from our Vercel team
-            await removeDomainFromVercelTeam(
-              site.customDomain
-            );
+            await removeDomainFromVercelTeam(site.customDomain);
           }
-          
-          */
         }
       } else if (key === "image" || key === "logo") {
         if (!process.env.BLOB_READ_WRITE_TOKEN) {
