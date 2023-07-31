@@ -1,9 +1,7 @@
 # Igloo Tools
 
-Multi-tenant Next.js Tailwind Postgres app hosted on Vercel
+Multi-tenant Next.js Tailwind Postgres app hosted on Vercel. Home page with passkey impl can be found at [iglootools-home](https://github.com/snowball-tools/iglootools-home)
 
-- Create Passkeys via [Lit Protocol](https://litprotocol.com/)
-- [WIP] Session based signing, AA, etc
 - [WIP] Create, Manage, and Use Passkeys on Mobile (Swift, Kotlin, React Native) and Web
     - [WIP] Init Tenant App (ie `appName.webapp.xyz`) handling `.well-known/apple-app-site-association` for passkeys + app bundle id association
         - [Nice To Have] Remote Notification
